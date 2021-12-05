@@ -1,41 +1,22 @@
 import turtle 
 from random import randint
+import random
 
-def input_angle(): 
-    num = randint(100, 170)
-    return num
-
-def generate_random_colour(): 
-    """Generates an R,G,B values randomly in range 0 to 255 """ 
-    r = randint(0, 255) 
-    g = randint(0, 255) 
-    b = randint(0, 255) 
-    return r, g, b
-
-print('Set up Screen') 
 turtle.title('Colorful pattern')
-turtle.setup(1200, 800) 
+turtle.setup(1270, 950, 0, 0)
 turtle.hideturtle()
 turtle.bgcolor('black')
 turtle.tracer(4, 10)
-turtle.speed(1)
-turtle.pensize(5)
+turtle.speed(15)
+turtle.pensize(10)
 
-
-
-# Set the background colour of the screen 
 turtle.colormode(255)
-# Indicates RGB numbers will be in the range 0 to 255 
-angle = input_angle()
-print(f'Angle is {angle}')
-print('Start the drawing') 
+angle = [103, 154, 108, 121, 135, 160, 177, 140, 120, 144, 100, 108, 276, 90, 289]
+s_angle = random.choice(angle)
+color = ['indigo', 'blue', 'green', 'yellow', 'orange', 'red']
 for i in range(5, 800):
-    turtle.pencolor(generate_random_colour()) 
+    turtle.pencolor(color[i % len(color)]) 
     turtle.forward(i)
-    turtle.right(angle)
+    turtle.right(s_angle)
 
-# turtle.pencolor('white')
-# turtle.write("Zakariyan Coding Society",True, font=("Verdana", 35, "normal"))
-print('Done')
 turtle.done()
-# [103, 154, 108, 121, 135, 160, 177, 140, 120, 144, 100, 108]
